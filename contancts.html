@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<style>
+*{
+padding:auto;
+margin:auto;
+text-align:centre;
+}
+body{
+	background-image: url("https://cdn1.vectorstock.com/i/1000x1000/91/45/sea-pattern-background-vector-829145.jpg");
+	background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+}
+#input{
+	margin-top: 50px;
+	margin-left: 500px;
+	border: 1px solid #ccc;
+	height: 40px;
+	width: 300px;
+	border-radius: 10px;
+	background-color: #b5fffb;
+	
+}
+.collection-header{
+	border-bottom: 1px solid #ccc;
+	height: 20px;
+	width:300px;
+}
+ a{
+	text-decoration: none;
+	color:#42f4c2;
+	font-size:20px;
+}
+a:hover{
+	font-size:23px;
+	 
+  
+}
+.collection-item{
+	border-bottom: 1px solid #ccc;
+	width:300px;
+	list-style-type: none;
+}
+</style>
+<body>
+	<div class = "container">
+<input type="text" id ="input" placeholder="Search for names...">
+<br>
+<ul id ="names" class="collection-nwith-header">
+	<li class = "collection-header">
+	<h5>A</h5>
+    </li>
+    <li class= "collection-item">
+    	<a href= "#">Aram</a>
+    </li>
+    <li class= "collection-item">
+    	<a href= "#">Armen</a>
+    </li>
+    <li class= "collection-item">
+    	<a href= "#">Arsen</a>
+    </li>
+    <li class= "collection-item">
+    	<a href= "#">Artur</a>
+    </li>
+
+
+
+
+    <li class = "collection-header">
+	<h5>B</h5>
+    </li><br>
+    <li class= "collection-item">
+    	<a href= "#">Bela</a>
+    </li>
+    <li class= "collection-item">
+    	<a href= "#">Boris</a>
+    </li>
+    <li class= "collection-item">
+    	<a href= "#">Bred</a>
+    </li>
+    <li class= "collection-item">
+    	<a href= "#">Bud</a>
+    </li>
+
+
+
+     <li class = "collection-header">
+	<h5>C</h5>
+    </li><br>
+    <li class= "collection-item">
+    	<a href= "#">Camella</a>
+    </li>
+    <li class= "collection-item">
+    	<a href= "#">Cadence</a>
+    </li>
+    <li class= "collection-item">
+    	<a href= "#">Cadenza</a>
+    </li>
+    <li class= "collection-item">
+    	<a href= "#">Cadi</a>
+    </li>
+</ul>
+</div>
+<script type="text/javascript">
+let input = document.getElementById("input");
+input.addEventListener("keyup", filterNames);
+function filterNames (){
+	let filteredValue = document.getElementById("input").value.toUpperCase();
+	let ul = document.getElementById("names");
+	let li = ul.querySelectorAll("li.collection-item");
+	for(let i= 0; i<li.length; i++){
+		let a = li[i].getElementsByTagName("a")[0];
+		if(a.innerHTML.toUpperCase().indexOf(filteredValue) > -1){
+			li[i].style.display = "";
+		}else{
+			li[i].style.display ="none";
+		}
+	}
+}
+</script>
+</body>
+</html>
